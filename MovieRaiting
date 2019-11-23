@@ -1,0 +1,48 @@
+function solve(arr) {
+   let numberMovie = +arr.shift();
+   let minMovieRaitingName = "";
+   let minMovieRating = Number.MAX_SAFE_INTEGER;
+
+   let maxMovieRatingName = "";
+   let maxMovieRating = Number.MIN_SAFE_INTEGER;
+
+   let totalRaiting = 0;
+
+
+
+   for(let i = 0; i< numberMovie; i++) {
+       let movieName = arr.shift();
+       let movieRaiting = +arr.shift();
+      if(movieRaiting> maxMovieRating) {
+          maxMovieRating = movieRaiting;
+          maxMovieRatingName = movieName;
+      }
+       if(movieRaiting < minMovieRating) {
+           minMovieRating = movieRaiting;
+           minMovieRaitingName = movieName;
+       }
+       totalRaiting+= movieRaiting;
+   }
+
+    console.log(`${maxMovieRatingName} is with highest rating: ${maxMovieRating}`)
+    console.log(`${minMovieRaitingName} is with lowest rating: ${minMovieRating}`)
+    console.log(`Avarege rating: ${totalRaiting/numberMovie}`)
+
+}
+
+
+
+console.log(
+    solve([
+        '5',   'A Star is Born',
+        '7.8', 'Creed 2',
+        '7.3', 'Mary Poppins',
+        '7.2', 'Vice',
+        '7.2', 'Captain Marvel',
+        '7.1'
+    ])
+)
+->
+A Star is Born is with highest rating: 7.8
+Captain Marvel is with lowest rating: 7.1
+Avarege rating: 7.32
