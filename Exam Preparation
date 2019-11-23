@@ -1,0 +1,18 @@
+function solve(arr) {
+   let baklava = +arr[0];
+   let myfinite = +arr[1];
+   let sholen = +arr[2]
+   let bonbons = +arr[3];
+   let cookie = +arr[4] * 7.50
+
+let priceSholen = (baklava + baklava * 0.60) * sholen;
+let priceBonbon = (myfinite + myfinite * 0.80) * bonbons;
+let result = priceBonbon + priceSholen + cookie
+    return result.toFixed(2)
+
+}
+
+
+console.log(
+    solve([ '6.90', '4.20', '1.5', '2.5', '1' ])
+)
